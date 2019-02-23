@@ -74,7 +74,7 @@ class HeaderComponent extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="support.html">
+                      <Link to="/app/support">
                         <i>
                           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enableBackground="new 0 0 18 18" xmlSpace="preserve">
                             <path fillRule="evenodd" clipRule="evenodd" stroke="none" d="M10.04,13.296c0,0.724-0.633,1.085-1.085,1.085
@@ -91,7 +91,7 @@ class HeaderComponent extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <Link to="references.html">
+                      <Link to="/app/references">
                         <i>
                           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18.392px" viewBox="0 0 20 18.392" enableBackground="new 0 0 20 18.392" xmlSpace="preserve">
                             <path fillRule="evenodd" clipRule="evenodd" stroke="none" d="M9.95,3.518c0.402,0,1.307-0.804,1.608-0.905
