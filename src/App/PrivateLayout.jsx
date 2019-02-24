@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { HeaderComponent, FooterComponent } from '../_components';
+import { OfferPage } from '../OfferPage/OfferPage';
 import { SupportPage } from '../SupportPage';
 import { ReferencePage } from '../ReferencePage';
 
@@ -16,6 +17,7 @@ class PrivateLayout extends React.Component {
         <HeaderComponent></HeaderComponent>
 
         <Switch>
+          <Route path='/app/offres' component={OfferPage} />
           <Route path='/app/support' component={SupportPage} />
           <Route path='/app/references' component={ReferencePage} />
         </Switch>

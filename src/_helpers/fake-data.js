@@ -8,7 +8,19 @@ import {
   bpImg,
   coraImg,
   carrefourCityImg,
-  essoImg
+  essoImg,
+  centralisationSocialMediaImg,
+  icCentralisationImg,
+  instantPlaisirImg,
+  icInstantImg,
+  foodAgregatorImg,
+  icFoodAgregatorImg,
+  campagneFacebookImg,
+  icFacebookImg,
+  snapImg,
+  icSnapImg,
+  wazeImg,
+  icWazeImg
 } from './load-images';
 
 export let referencesFakeData = {
@@ -53,4 +65,44 @@ export let referencesFakeData = {
     name: 'Esso',
     img: essoImg
   }]
+};
+
+export let campaignsFakeData = {
+  campaigns: [{
+      id: 1,
+      name: 'Centralisation Social Media',
+      img: centralisationSocialMediaImg,
+      imgIco: icCentralisationImg
+    },
+    {
+      id: 2,
+      name: 'Instant Plaisir',
+      img: instantPlaisirImg,
+      imgIco: icInstantImg
+    },
+    {
+      id: 3,
+      name: 'Food Agregator',
+      img: foodAgregatorImg,
+      imgIco: icFoodAgregatorImg
+    },
+    {
+      id: 4,
+      name: 'Campagne Facebook',
+      img: campagneFacebookImg,
+      imgIco: icFacebookImg
+    },
+    {
+      id: 5,
+      name: 'snap',
+      img: snapImg,
+      imgIco: icSnapImg
+    },
+    {
+      id: 6,
+      name: 'waze',
+      img: wazeImg,
+      imgIco: icWazeImg
+    }
+  ]
 };

@@ -11,6 +11,20 @@ import bpImg from '../_assets/images/bp.jpg';
 import coraImg from '../_assets/images/Cora.jpg';
 import carrefourCityImg from '../_assets/images/Carrefour-City.jpg';
 import essoImg from '../_assets/images/Esso.jpg';
+import centralisationSocialMediaImg from '../_assets/images/Centralisation-Social-Media.jpg';
+import icCentralisationImg from '../_assets/images/ic-centralisation.svg';
+import instantPlaisirImg from '../_assets/images/Instant-Plaisir.jpg';
+import icInstantImg from '../_assets/images/ic-instant.svg';
+import foodAgregatorImg from '../_assets/images/food-agregator.jpg';
+import icFoodAgregatorImg from '../_assets/images/ic-Food-Agregator.svg';
+import campagneFacebookImg from '../_assets/images/campagne-facebook.jpg';
+import icFacebookImg from '../_assets/images/ic-facebook.svg';
+import snapImg from '../_assets/images/snap.jpg';
+import icSnapImg from '../_assets/images/ic-snap.jpg';
+import wazeImg from '../_assets/images/waze.jpg';
+import icWazeImg from '../_assets/images/ic-waze.jpg';
+import independantBannerImg from '../_assets/images/indépendant-banner.jpg';
+import reseauxBannerImg from '../_assets/images/reseaux-banner.jpg';
 
 export {
   logoImg,
@@ -25,5 +39,19 @@ export {
   bpImg,
   coraImg,
   carrefourCityImg,
-  essoImg
+  essoImg,
+  centralisationSocialMediaImg,
+  icCentralisationImg,
+  instantPlaisirImg,
+  icInstantImg,
+  foodAgregatorImg,
+  icFoodAgregatorImg,
+  campagneFacebookImg,
+  icFacebookImg,
+  snapImg,
+  icSnapImg,
+  wazeImg,
+  icWazeImg,
+  independantBannerImg,
+  reseauxBannerImg
 };
