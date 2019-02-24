@@ -4,12 +4,12 @@ select{
 	-moz-appearance:none;
 }
 ::selection {
-	background:#8E54E9;
+	background:#F40000;
 	color:#FFFFFF;
 	text-shadow:none;
 }
 ::-moz-selection {
-	background:#8E54E9;
+	background:#F40000;
 	color:#FFFFFF;
 	text-shadow:none;
 }
