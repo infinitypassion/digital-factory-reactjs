@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { paulImg, intermarcheImg, franprixImg, selectaImg, oTacosImg, aviaImg, bpImg, coraImg, carrefourCityImg, essoImg } from '../_helpers/load-images';
+
+import { referencesFakeData } from '../_helpers/fake-data';
 
 class ReferencePage extends React.Component {
   constructor() {
     super();
+
+    this.referencesFakeData = referencesFakeData;
   }
 
   // Start -- React lifecycle methods
@@ -27,86 +30,20 @@ class ReferencePage extends React.Component {
                 </div>
                 <div className="reference-list section">
                   <ul>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={paulImg} alt="paul" className="img-responsive" />
-                        </div>
-                        <h5>paul</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={intermarcheImg} alt="Intermarché" className="img-responsive" />
-                        </div>
-                        <h5>Intermarché</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={franprixImg} alt="Franprix" className="img-responsive" />
-                        </div>
-                        <h5>Franprix</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={selectaImg} alt="Selecta" className="img-responsive" />
-                        </div>
-                        <h5>Selecta</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={oTacosImg} alt="O’Tacos" className="img-responsive" />
-                        </div>
-                        <h5>O’Tacos</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={aviaImg} alt="Avia" className="img-responsive" />
-                        </div>
-                        <h5>Avia</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={bpImg} alt="bp" className="img-responsive" />
-                        </div>
-                        <h5>bp</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={coraImg} alt="Cora" className="img-responsive" />
-                        </div>
-                        <h5>Cora</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={carrefourCityImg} alt="Carrefour City" className="img-responsive" />
-                        </div>
-                        <h5>Carrefour City</h5>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#" target="_blank" className="reference-box">
-                        <div className="img-wrap">
-                          <img src={essoImg} alt="Esso" className="img-responsive" />
-                        </div>
-                        <h5>Esso</h5>
-                      </Link>
-                    </li>
+                    {
+                      this.referencesFakeData.references.map((reference, refKey) => {
+                        return (
+                          <li key={refKey}>
+                            <Link to="#" target="_blank" className="reference-box">
+                              <div className="img-wrap">
+                                <img src={reference.img} alt={reference.name} className="img-responsive" />
+                              </div>
+                              <h5>{reference.name}</h5>
+                            </Link>
+                          </li>
+                        );
+                      })
+                    }
                   </ul>
                 </div>
               </div>
