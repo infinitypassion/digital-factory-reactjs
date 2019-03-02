@@ -9,15 +9,84 @@
 @media only screen and (min-width:1121px) and (max-width:1279px) {
 	.container {
 		width: 98%;
+		padding: 0 15px;
+	}
+	.navbar-nav li{
+		margin-right: 15px;
+	}
+	.reference-wrap {
+	    padding-left: 0;
 	}
 
+	.support-box{
+		padding: 30px 25px;
+	}
+	.support-box a{
+		font-size: 16px;
+	}
 
+	.campaigns-box .img-wrap{
+		height: 220px;
+	}
+	.campaigns-box .text-wrap {
+	    padding: 30px 20px;
+	}
 
 }
 
 @media only screen and (min-width:992px) and (max-width:1120px) {
 	.container {
 		width: 98%;
+		padding: 0 15px;
+	}
+	h1{
+		font-size: 32px;
+	}
+	.main-raw {
+	    padding: 40px 0;
+	}
+
+	.navbar-nav li{
+		margin-right: 15px;
+	}
+	.navbar-nav li a{
+		padding: 0 15px 0 35px;
+		font-size: 14px;
+	}
+/* Login */	
+	.branding{
+		width: 115px;		
+	}
+	.login-con{
+		padding: 40px 0 0;
+	}
+
+
+/* References */
+	.reference-wrap {
+	    padding-left: 0;
+	}
+	.reference-box{
+		padding: 30px 30px 15px;
+	}
+
+/* support */
+
+	.support-box{
+		padding: 30px 25px;
+		margin-top: 40px;
+	}
+	.support-box a{
+		background-position: right 20px center;
+		font-size: 14px;
+		line-height: 60px;	
+		padding: 0 40px 0 50px;
+	}
+	.support-box a i{
+		left: 15px;
+	}
+	.support-box a i svg{
+		width: 16px;
 	}
 
 
@@ -30,8 +99,92 @@
 @media only screen and (min-width:768px) and (max-width:991px) {
 	.container {
 		width: 98%;
+		padding: 0 15px;
+	}
+	h1{
+		font-size: 28px;
+	}
+	h4{
+		font-size: 16px;
+	}
+	p{
+		font-size: 16px;
+	}
+	.main-raw {
+	    padding: 40px 0;
+	}
+	.inner-title p br{
+		display: none;
 	}
 
+
+	.navbar-nav{
+		padding-right: 62px;
+	}
+	.navbar-nav li{
+		margin-right: 20px;
+	}
+	.navbar-nav li a{
+		padding: 30px 0 0;
+		font-size: 14px;
+		line-height: 50px;
+	}
+	.navbar-nav li i{
+		width: 26px;
+		height: 26px;
+		line-height: 22px;
+		right: 0;
+		margin: 0 auto;
+		top: 12px;
+	}
+	.profile a{
+		padding: 0 15px;
+	}
+
+/* Login */	
+	.branding{
+		width: 115px;		
+	}
+	.login-con{
+		padding: 40px 0 0;
+	}
+
+/* References */
+	.inner-title h1 {
+    	font-size: 20px;	
+	}
+	.reference-wrap {
+	    padding-left: 0;
+	}
+	.reference-box{
+		padding: 10px 12px 15px;
+	}
+	.reference-list .img-wrap {
+	    min-height: 70px;
+	    line-height: 70px;
+	}
+/* support */
+
+	.support-box{
+		padding: 25px 20px;
+		margin-top: 30px;
+	}
+	.support-box a{
+		background-position: right 20px center;
+		font-size: 14px;
+		line-height: 120%;	
+		padding: 15px 40px 15px 40px;
+	}
+	.support-box a:last-child{
+		line-height: 33px;
+	}
+	.support-box a i{
+		left: 15px;
+		top: 15px;
+	}
+	.support-box a i svg{
+		width: 16px;
+	}
 	
 
 
@@ -46,6 +199,122 @@
 @media only screen and (min-width:950px) and (max-width:1024px) {}
 
 @media (max-width: 767px) {
+	.navbar-header{
+		text-align: center;
+	}
+	.navbar-toggle{
+		left: 15px;
+	    margin: 0;
+	    padding: 0;
+	    position: absolute;
+	    top: 25px;
+	}
+	.navbar-toggle .icon-bar{
+		background: #333;
+	}
+	.navbar-brand{
+		float: none;
+		display: inline-block;
+		width: 90px;
+		padding: 10px 0 5px;
+	}
+	.navbar-collapse{
+		border-top-color: #ddd;
+	}
+	.navbar-nav{
+		float: left;
+	    margin: 0;
+	    padding: 20px 0;
+	    position: inherit;
+	    width: 100%;
+	}
+	.navbar-nav li{
+		float: left;
+		width: 100%;
+		margin: 0;
+	}
+	.navbar-nav li a{
+		line-height: 60px;
+	}
+	.navbar-nav li a i{
+		top: 16px;
+	}
+	.profile a{
+		padding: 0 20px;
+		line-height: 66px;
+	}
+
+
+
+	.form-control, .btn-main{
+		height: 46px;
+	}
+	.login-con{
+		padding: 0;
+	}
+	.login-right{
+		display: none;
+	}
+	.form-main .btn-main{
+		height: 50px;
+	}
+	.main-wraper{
+		margin-top: 66px;
+	}
+	.main-raw {
+	    padding: 30px 0;
+	}
+	.inner-title p br{
+		display: none;
+	}
+	p{
+		font-size: 14px;
+	}
+
+	.footer-con p{
+		float: left;
+	}
+	.footer-con a{
+		position: relative;
+		float: right;
+	}
+
+	.inner-title h1 {
+    	font-size: 20px;	
+	}
+	.reference-box{
+		padding: 15px 12px;
+	}
+	.reference-list .img-wrap {
+	    min-height: 70px;
+	    line-height: 70px;
+	}
+
+
+	.support-box{
+		width: 100%;
+		padding: 25px 20px;
+		margin-top: 30px;
+	}
+
+	.campaigns-list ul li{
+		width: 100%;
+		margin: 15px 0 0;
+	}
+	.campaigns-box .text-wrap{
+		padding: 20px 15px;
+	}
+	.campaigns-box .img-wrap{
+		height: auto;
+	}
+	.campaigns-box .text-wrap h4{
+		width: 84%;
+	}
+	.range{
+		float: left;
+		margin-top: 15px;
+		line-height: inherit;
+	}
 
 
 
@@ -59,9 +328,57 @@
 
 @media only screen and (min-width:480px) and (max-width:767px) {
 	.container {
-		width: 96%;
+		width: 100%;
+		padding: 0 15px;
+	}
+	h1{
+		font-size: 26px;
+	}
+	h4{
+		font-size: 16px;
 	}
 
+/* Login */	
+	.branding{
+		width: 115px;		
+	}
+	.login-main {
+ 	   padding: 40px 50px;
+	}
+
+/* Login */
+
+/* References */
+	.inner-title h1 {
+    	font-size: 20px;	
+	}
+	.reference-wrap {
+	    padding-left: 0;
+	}
+	.reference-list ul li{
+		width: 32%;
+		margin-right: 2%;
+	}
+	.reference-list ul li:nth-child(5n){
+		margin-right: 2%;
+	}
+	.reference-list ul li:nth-child(3n){
+		margin-right: 0;
+	}
+
+/* support */
+	.support-box a{
+		font-size: 14px;
+		line-height: 50px;	
+		padding: 0 50px 0 50px;
+	}
+	.support-box a i{
+		left: 20px;
+	}
+	.support-box a i svg{
+		width: 16px;
+	}
+	
 	
 
 }
@@ -87,8 +404,67 @@
 @media (max-width:479px) {
 	.container {
 		width: 100%;
+		padding: 0 15px;
+	}
+	h1{
+		font-size: 26px;
+	}
+	h4{
+		font-size: 16px;
 	}
 
+	.navbar-brand{
+		margin-left: -20px;
+	}
+
+/* Login */	
+	.branding{
+		width: 100px;		
+	}
+	.login-main {
+ 	   padding: 40px 30px;
+	}
+	
+		
+/* Login */
+
+
+/* References */
+
+	.reference-wrap {
+	    padding-left: 0;
+	}
+	.reference-list ul li{
+		width: 49%;
+		margin-right: 2%;
+	}
+	.reference-list ul li:nth-child(5n){
+		margin-right: 2%;
+	}
+	.reference-list ul li:nth-child(2n){
+		margin-right: 0;
+	}
+
+/* support */
+	.support-box{
+		padding: 25px 15px;
+	}
+	.support-box a{
+		background-image: none !important; 
+		font-size: 14px;
+		line-height: 120%;	
+		padding: 12px 15px 12px 50px;
+	}
+	.support-box a:last-child{
+		line-height: 34px;
+	}
+	.support-box a i{
+		left: 15px;
+		top: 12px
+	}
+	.support-box a i svg{
+		width: 16px;
+	}
 	
 
 

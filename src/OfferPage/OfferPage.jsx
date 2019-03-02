@@ -12,6 +12,7 @@ class OfferPage extends React.Component {
     this.campaignsFakeData = campaignsFakeData;
 
     this.toggleCampaignTab = this.toggleCampaignTab.bind(this);
+    this.handleTabContSelect = this.handleTabContSelect.bind(this);
 
     this.state = { campaginState: 'home' };
   }
@@ -28,6 +29,10 @@ class OfferPage extends React.Component {
       this.setState({ campaginState: 'home' });
     }
   }
+
+  handleTabContSelect(campaginState) {
+    this.setState({ campaginState });
+  }
   // End -- Custom methods
 
   // Render
@@ -36,7 +41,7 @@ class OfferPage extends React.Component {
       <section>
         <div className="main-wraper section">
           <div className="campaigns-wraper section">
-            <TabContainer id="campaign-tab-container" defaultActiveKey="home" activeKey={this.state.campaginState}>
+            <TabContainer id="campaign-tab-container" defaultActiveKey="home" activeKey={this.state.campaginState} onSelect={this.handleTabContSelect}>
               <div className="campaign-body section">
                 <div className="campaign-action">
                   <div className="container">

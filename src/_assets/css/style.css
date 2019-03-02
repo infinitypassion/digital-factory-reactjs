@@ -227,6 +227,7 @@ a:hover {
 	float:left;
 	width: 100%;
 	height: 50px;
+	padding: 0 15px;
 	color: #93A1AD;
 	font-size: 16px;
 	font-weight: 400;
@@ -294,6 +295,9 @@ section {
 
 
 /* ------ Login-start ------ */
+.login-wrap section{
+	margin: 0;
+}
 .login-main {
 	padding: 50px 15px 50px 4%;
 	position: relative;
@@ -381,23 +385,36 @@ section {
 	width: 100%;
 	position: relative;
 }
-.header-main .branding{
+.navbar-brand{
 	width: 104px;
 	padding: 12px 0;
+	height: auto;
 }
-.header-right{
+
+
+.navbar{
+	border-bottom: 1px solid #dbdbdb;
+	background: #ffffff;
+	margin: 0;
+	z-index: 999;
+}
+.navbar-header{
+	float: left;
+	width: 100%;
+	position: relative;
+}
+.navbar-nav{
 	float: right;
 	width: auto;
 	position: absolute;
-	right: 2%;
+	right: 0;
 	top: 0;
+	padding-right: 95px;
 }
-.nav-main ul li{
-	float: left;
-	width: auto;
+.navbar-nav li{
 	margin-right: 25px;
 }
-.nav-main ul li a{
+.navbar-nav li a{
 	float: left;
 	width: auto;
 	padding: 0 20px 0 40px; 
@@ -409,11 +426,15 @@ section {
 	transition: all 0.25s ease 0s;
 	-webkit-transition: all 0.25s ease 0s;
     -moz-transition: all 0.25s ease 0s;
+    text-shadow: none;
+    -webkit-text-shadow: none;
+    -moz-text-shadow: none;
 }
-.nav-main ul li a:hover, .nav-main ul li.active a{
+.navbar-nav li a:hover, .navbar-nav li a:focus, .navbar-nav li.active a{
 	color: #F40000;
+	background: transparent;
 }
-.nav-main ul li i{
+.navbar-nav li i{
 	background: #ffffff;
 	float: left;
 	width: 30px;
@@ -431,7 +452,7 @@ section {
 	-webkit-transition: all 0.25s ease 0s;
     -moz-transition: all 0.25s ease 0s;
 }
-.nav-main ul li i svg{
+.navbar-nav li i svg{
 	fill: #6E6E6E;
 	stroke: #6E6E6E;
 	display: inline-block;
@@ -440,15 +461,22 @@ section {
     -moz-transition: all 0.25s ease 0s;
     vertical-align: middle;
 }
-.nav-main ul li a:hover i svg, .nav-main ul li.active a i svg{
+.navbar-nav li a:hover i svg, .navbar-nav li.active a i svg{
 	fill: #ffffff;
 	stroke: #ffffff;
 }
-.nav-main ul li a:hover i, .nav-main ul li.active a i{
+.navbar-nav li a:hover i, .navbar-nav li.active a i{
 	background: #F40000;
 }
 
-.nav-main ul li.profile a{
+.profile{
+	position: absolute;
+	right: 1%;
+	top: 0;
+}
+.profile a{
+	display: inline-block;
+	line-height: 80px;
 	padding: 0 25px;
 	border-left: 1px solid #DBDBDB;
 }
@@ -786,8 +814,8 @@ section {
     -moz-transition: all 0.25s ease 0s;
 }
 .support-box a i{
-	width: 20px;
-	height: 100%;
+	width: auto;
+	height: auto;
 	position: absolute;
 	left: 30px;
 	top: 0;
@@ -1222,6 +1250,9 @@ section {
 .need-selector input{
 	opacity: 0;
 	visibility: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 .refres-btn{

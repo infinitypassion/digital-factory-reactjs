@@ -10,18 +10,12 @@ class PublicLayout extends React.Component {
 
   render() {
     return (
-      <div className="LoginWraper">
+      <div className="login-wrap">
         <section>
-          <div className="visiretail_registration section">
-            <div className="row">
-              <Switch>
-                <Route path='/login' component={LoginPage} />
-                {/* <Route path='/register' component={RegisterPage} />
-                <Route path='/thanks' component={ThanksPage} /> */}
-                <Redirect from="/" to="/login" />
-              </Switch>
-            </div>
-          </div>
+          <Switch>
+            <Route path='/login' component={LoginPage} />
+            <Redirect from="/" to="/login" />
+          </Switch>
         </section>
       </div>
     );

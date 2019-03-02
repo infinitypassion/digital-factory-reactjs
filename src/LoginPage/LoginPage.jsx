@@ -17,7 +17,7 @@ class LoginPage extends React.Component {
   // Render
   render() {
     return (
-      <div className="login-wrap section">
+      <div className="section">
         <div className="row">
           <div className="col-sm-5 col-xs-12 login-main">
             <div className="login-con">
