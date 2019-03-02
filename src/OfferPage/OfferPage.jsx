@@ -127,7 +127,7 @@ class OfferPage extends React.Component {
                                 this.campaignsFakeData.campaigns.map((campaign, cKey) => {
                                   return (
                                     <li key={cKey}>
-                                      <Link to="details.html" className="campaigns-box">
+                                      <Link to="/app/details" className="campaigns-box">
                                         <div className="img-wrap">
                                           <img src={campaign.img} alt={campaign.name} className="img-responsive" />
                                         </div>
@@ -176,7 +176,7 @@ class OfferPage extends React.Component {
                                 this.campaignsFakeData.campaigns.map((campaign, cKey) => {
                                   return (
                                     <li key={cKey}>
-                                      <Link to="details.html" className="campaigns-box">
+                                      <Link to="/app/details" className="campaigns-box">
                                         <div className="img-wrap">
                                           <img src={campaign.img} alt={campaign.name} className="img-responsive" />
                                         </div>

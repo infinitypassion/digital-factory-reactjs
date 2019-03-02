@@ -25,6 +25,10 @@ import wazeImg from '../_assets/images/waze.jpg';
 import icWazeImg from '../_assets/images/ic-waze.jpg';
 import independantBannerImg from '../_assets/images/indépendant-banner.jpg';
 import reseauxBannerImg from '../_assets/images/reseaux-banner.jpg';
+import detailsImg from '../_assets/images/details-img.jpg';
+import icUserImg from '../_assets/images/ic-user.svg';
+import icUserExclamationImg from '../_assets/images/ic-user-exclamation.svg';
+import icUserCheckImg from '../_assets/images/ic-user-check.svg';
 
 export {
   logoImg,
@@ -53,5 +57,9 @@ export {
   wazeImg,
   icWazeImg,
   independantBannerImg,
-  reseauxBannerImg
+  reseauxBannerImg,
+  detailsImg,
+  icUserImg,
+  icUserExclamationImg,
+  icUserCheckImg
 };
