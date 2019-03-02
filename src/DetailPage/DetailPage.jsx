@@ -1,19 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
+import { PanelGroup, Panel } from 'react-bootstrap';
 
-import { campaignsFakeData } from '../_helpers/fake-data';
-import { reseauxBannerImg, independantBannerImg, detailsImg, icUserImg, icUserExclamationImg, icUserCheckImg } from '../_helpers/load-images';
+import { campaignDetailsFakeData } from '../_helpers/fake-data';
+import { detailsImg, icUserImg, icUserExclamationImg, icUserCheckImg } from '../_helpers/load-images';
 
 class DetailPage extends React.Component {
   constructor() {
     super();
+
+    this.campaignDetailsFakeData = campaignDetailsFakeData;
+
+    this.handlePanelSelect = this.handlePanelSelect.bind(this);
+    this.state = {
+      activePanelKey: ''
+    };
   }
 
   // Start -- React lifecycle methods
   // End -- React lifecycle methods
 
   // Start -- Custom methods
+  handlePanelSelect(activePanelKey) {
+    this.setState({ activePanelKey });
+  }
   // End -- Custom methods
 
   // Render
@@ -98,172 +108,77 @@ class DetailPage extends React.Component {
                   </div>
                   <div className="derails-raw">
                     <h4>Détails de l’offre</h4>
-                    <div className="panel-group" id="accordion">
-                      <div className="panel panel-default">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <a data-toggle="collapse" className="collapsed" data-parent="#accordion" href="#collapse1" aria-expanded="false">Pourquoi cette offre ?</a>
-                          </div>
-                        </div>
-                        <div id="collapse1" className="panel-collapse collapse" aria-expanded="false">
-                          <div className="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="panel panel-default">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <a className="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false">Descriptif de la campagne
-                            </a>
-                          </div>
-                        </div>
-                        <div id="collapse2" className="panel-collapse collapse" aria-expanded="false">
-                          <div className="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="panel panel-default">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" className="collapsed">Pré-requis</a>
-                          </div>
-                        </div>
-                        <div id="collapse3" className="panel-collapse collapse" aria-expanded="false">
-                          <div className="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="panel panel-default">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <a className="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false">Aperçu de ma campagne
-                            </a>
-                          </div>
-                        </div>
-                        <div id="collapse4" className="panel-collapse collapse" aria-expanded="false">
-                          <div className="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <PanelGroup accordion id="accordion" activeKey={this.state.activePanelKey} onSelect={this.handlePanelSelect}>
+                      {
+                        this.campaignDetailsFakeData.offers.map((offer, oKey) => {
+                          return (
+                            <Panel eventKey={offer.key} key={oKey}>
+                              <Panel.Heading>
+                                <Panel.Title toggle>
+                                  {offer.title}
+                                </Panel.Title>
+                              </Panel.Heading>
+                              <Panel.Body collapsible>
+                                {
+                                  offer.info.map((info, iKey) => {
+                                    return (
+                                      <p key={iKey}>
+                                        {info}
+                                      </p>
+                                    );
+                                  })
+                                }
+                              </Panel.Body>
+                            </Panel>
+                          );
+                        })
+                      }
+                    </PanelGroup>
                     <div className="derails-raw">
                       <h4>Choisir un pack</h4>
-                      <div className="pack-box">
-                        <div className="pack-head">
-                          <div className="detials-title">
-                            <h2>Starter</h2>
-                            <p>J’attire des nouveaux clients grâce à la publicité locale sur Facebook.</p>
-                            <span className="time">15 jours</span>
-                          </div>
-                        </div>
-                        <div className="attract-list">
-                          <ul>
-                            <li>
-                              <h5>Reach unique</h5>
-                              <div className="attract-btn">
-                                <i><img src={icUserImg} className="img-responsive" alt="#" /></i>
-                                10 000 personnes
+                      {
+                        this.campaignDetailsFakeData.packs.map((pack, pKey) => {
+                          return (
+                            <div className="pack-box" key={pKey}>
+                              <div className="pack-head">
+                                <div className="detials-title">
+                                  <h2>{pack.title}</h2>
+                                  <p>{pack.info}</p>
+                                  <span className="time">{pack.duration} jours</span>
+                                </div>
                               </div>
-                            </li>
-                            <li>
-                              <h5>Nombre de contact</h5>
-                              <div className="attract-btn">
-                                <i><img src={icUserExclamationImg} className="img-responsive" alt="#" /></i>
-                                5 000
+                              <div className="attract-list">
+                                <ul>
+                                  <li>
+                                    <h5>Reach unique</h5>
+                                    <div className="attract-btn">
+                                      <i><img src={icUserImg} className="img-responsive" alt="#" /></i>
+                                      {pack.singleReach} personnes
                               </div>
-                            </li>
-                            <li>
-                              <h5>Nombre de clics générés</h5>
-                              <div className="attract-btn">
-                                <i><img src={icUserCheckImg} className="img-responsive" alt="#" /></i>
-                                1000
+                                  </li>
+                                  <li>
+                                    <h5>Nombre de contact</h5>
+                                    <div className="attract-btn">
+                                      <i><img src={icUserExclamationImg} className="img-responsive" alt="#" /></i>
+                                      {pack.totContacts}
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <h5>Nombre de clics générés</h5>
+                                    <div className="attract-btn">
+                                      <i><img src={icUserCheckImg} className="img-responsive" alt="#" /></i>
+                                      {pack.totClicks}
+                                    </div>
+                                  </li>
+                                </ul>
                               </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="start-btn">
-                          <Link to="#" className="btn-main">Lancer cette campagne</Link>
-                        </div>
-                      </div>
-                      <div className="pack-box">
-                        <div className="pack-head">
-                          <div className="detials-title">
-                            <h2>Booster</h2>
-                            <p>J’attire des nouveaux clients grâce à la publicité locale sur Facebook.</p>
-                            <span className="time">15 jours</span>
-                          </div>
-                        </div>
-                        <div className="attract-list">
-                          <ul>
-                            <li>
-                              <h5>Reach unique</h5>
-                              <div className="attract-btn">
-                                <i><img src={icUserImg} className="img-responsive" alt="#" /></i>
-                                10 000 personnes
+                              <div className="start-btn">
+                                <Link to="#" className="btn-main">Lancer cette campagne</Link>
                               </div>
-                            </li>
-                            <li>
-                              <h5>Nombre de contact</h5>
-                              <div className="attract-btn">
-                                <i><img src={icUserExclamationImg} className="img-responsive" alt="#" /></i>
-                                5 000
-                              </div>
-                            </li>
-                            <li>
-                              <h5>Nombre de clics générés</h5>
-                              <div className="attract-btn">
-                                <i><img src={icUserCheckImg} className="img-responsive" alt="#" /></i>
-                                1000
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="start-btn">
-                          <Link to="#" className="btn-main">Lancer cette campagne</Link>
-                        </div>
-                      </div>
+                            </div>
+                          );
+                        })
+                      }
                     </div>
                   </div>
                 </div>
