@@ -1,2 +1,2 @@
-export * from './HeaderComponent';
-export * from './FooterComponent';
+export { HeaderComponent } from './HeaderComponent';
+export { FooterComponent } from './FooterComponent';

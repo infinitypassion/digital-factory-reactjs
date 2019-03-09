@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
 import { campaignsFakeData } from '../../_helpers/fake-data';
 import { reseauxBannerImg, independantBannerImg } from '../../_helpers/load-images';
@@ -11,10 +10,6 @@ export class OfferPage extends React.Component {
     this.state = { campaginState: 'home' };
   }
 
-  // Start -- React lifecycle methods
-  // End -- React lifecycle methods
-
-  // Start -- Custom methods
   toggleCampaignTab = (e) => {
     e.stopPropagation();
     if (this.state.campaginState == 'home') {
@@ -27,7 +22,6 @@ export class OfferPage extends React.Component {
   handleTabContSelect = (campaginState) => {
     this.setState({ campaginState });
   }
-  // End -- Custom methods
 
   // Render
   render() {
@@ -120,7 +114,7 @@ export class OfferPage extends React.Component {
                               {
                                 campaignsFakeData.campaigns.map(
                                   (campaign, cKey) => (
-                                    <Campaign cKey={cKey} campaign={campaign}/>
+                                    <Campaign key={cKey} campaign={campaign}/>
                                   )
                                 )
                               }
@@ -149,7 +143,7 @@ export class OfferPage extends React.Component {
                             <ul>
                               {
                                 campaignsFakeData.campaigns.map((campaign, cKey) => (
-                                    <Campaign cKey={cKey} campaign={campaign}/>
+                                    <Campaign key={cKey} campaign={campaign}/>
                                   )
                                 )
                               }

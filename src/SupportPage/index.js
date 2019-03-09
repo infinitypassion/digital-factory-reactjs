@@ -1,1 +1,1 @@
-export * from './SupportPage';
+export { SupportPage } from './SupportPage';

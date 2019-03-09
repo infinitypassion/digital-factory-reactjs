@@ -1,2 +1,2 @@
-export * from './history';
+export { history } from './history';
 export * from './load-images';

@@ -1,1 +1,1 @@
-export * from './ReferencePage';
+export { ReferencePage } from './ReferencePage';

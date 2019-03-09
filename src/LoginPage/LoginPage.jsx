@@ -8,12 +8,6 @@ class LoginPage extends React.Component {
     super();
   }
 
-  // Start -- React lifecycle methods
-  // End -- React lifecycle methods
-
-  // Start -- Custom methods
-  // End -- Custom methods
-
   // Render
   render() {
     return (

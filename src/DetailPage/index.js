@@ -1,1 +1,1 @@
-export * from './DetailPage';
+export { DetailPage } from './components/DetailPage';
