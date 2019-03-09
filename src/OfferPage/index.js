@@ -1,1 +1,1 @@
-export * from './OfferPage';
+export { OfferPage } from './components/OfferPage';
