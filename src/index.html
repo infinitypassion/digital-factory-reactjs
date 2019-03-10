@@ -32,34 +32,6 @@
   <div id="app"></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- TODO Need to convert JS code to react code-->
-  <script type="text/javascript">
-    function getSelectedValue(id) {
-      return $("#" + id).find("dt a span.value").html();
-    }
-    $("button").click(function (e) {
-      var val = getSelectedValue('needs');
-      alert(val);
-    });
-
-    $(".dropdown dt a").click(function (e) {
-      $(".dropdown dd ul").toggle();
-      e.preventDefault();
-    });
-
-    $(".dropdown dd ul li a").click(function () {
-      var text = $(this).html();
-      $(".dropdown dt a span").html(text);
-      $(".dropdown dd ul").hide();
-
-    });
-
-    $(document).bind('click', function (e) {
-      var $clicked = $(e.target);
-      if (!$clicked.parents().hasClass("dropdown"))
-        $(".dropdown dd ul").hide();
-    });
-  </script>
 </body>
 
 </html>
