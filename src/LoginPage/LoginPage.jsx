@@ -18,7 +18,6 @@ class LoginPage extends React.Component {
               <div className="branding">
                 <img src={logoImg} className="img-responsive" alt="digital factory" />
               </div>
-              <h1>Simplifiez le déploiement de votre marketing digital</h1>
               <div className="form-main">
                 <form action="#/app/offres">
                   <div className="form-raw">

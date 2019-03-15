@@ -1,0 +1,1 @@
+export { DetailPageV2 } from './components/DetailPageV2';

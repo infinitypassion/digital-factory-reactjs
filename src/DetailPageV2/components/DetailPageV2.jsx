@@ -5,7 +5,7 @@ import { campaignDetailsFakeData } from '../../_helpers/fake-data';
 import { detailsImg, icUserImg, icUserExclamationImg, icUserCheckImg } from '../../_helpers/load-images';
 import { Pack } from './Pack';
 
-class DetailPage extends React.Component {
+class DetailPageV2 extends React.Component {
   constructor() {
     super();
 
@@ -74,30 +74,57 @@ class DetailPage extends React.Component {
                       <p>J’attire des nouveaux clients grâce à la publicité locale sur Facebook.</p>
                       <span className="time">15 jours ou 30 jours</span>
                     </div>
-                    <div className="attract-list">
-                      <ul>
-                        <li>
-                          <h5>Reach unique</h5>
-                          <div className="attract-btn">
-                            <i><img src={icUserImg} className="img-responsive" alt="#" /></i>
-                            10 000 personnes
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Nombre de contact</h5>
-                          <div className="attract-btn">
-                            <i><img src={icUserExclamationImg} className="img-responsive" alt="#" /></i>
-                            5 000
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Nombre de clics générés</h5>
-                          <div className="attract-btn">
-                            <i><img src={icUserCheckImg} className="img-responsive" alt="#" /></i>
-                            1000
-                          </div>
-                        </li>
-                      </ul>
+                  </div>
+                  <div className="pack-main">
+                    <div className="pack-box">
+                      <div className="pack-title">
+                        <h2>Starter</h2>
+                        <span className="time">15j</span>
+                      </div>
+                      <div className="pack-list">
+                        <ul>
+                          <li>
+                            <h5>Reach unique</h5>
+                            <span>10 000</span>
+                          </li>
+                          <li>
+                            <h5>contact</h5>
+                            <span>5000</span>
+                          </li>
+                          <li>
+                            <h5>clics</h5>
+                            <span>200</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="start-btn">
+                        <a href="#" className="btn-main">Lancer</a>
+                      </div>
+                    </div>
+                    <div className="pack-box">
+                      <div className="pack-title">
+                        <h2>Booster</h2>
+                        <span className="time">30j</span>
+                      </div>
+                      <div className="pack-list">
+                        <ul>
+                          <li>
+                            <h5>Reach unique</h5>
+                            <span>10 000</span>
+                          </li>
+                          <li>
+                            <h5>contact</h5>
+                            <span>5000</span>
+                          </li>
+                          <li>
+                            <h5>clics</h5>
+                            <span>200</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="start-btn">
+                        <a href="#" className="btn-main">Lancer</a>
+                      </div>
                     </div>
                   </div>
                   <div className="derails-raw">
@@ -122,14 +149,46 @@ class DetailPage extends React.Component {
                                     );
                                   })
                                 }
+
+                                {
+                                  offer.banner && offer.banner.map((banner, bKey) => {
+                                    return (
+                                      <div className="baaner_type" key={bKey}>
+                                        <h6>{banner.label}</h6>
+                                        <p>{banner.size}</p>
+                                        <img src={banner.img} alt="#" className="img-responsive" />
+                                      </div>
+                                    );
+                                  })
+                                }
+                                <div className="banner_con">
+                                  <div className="baaner_type">
+                                    <h6>Pavé</h6>
+                                    <p>300x250</p>
+                                    <img src="images/banner1.svg" alt="#" className="img-responsive" />
+                                  </div>
+                                  <div className="baaner_type">
+                                    <h6>Skyscraper</h6>
+                                    <p>120x600</p>
+                                    <img src="images/banner2.svg" alt="#" className="img-responsive" />
+                                  </div>
+                                  <div className="baaner_type">
+                                    <h6>Mégaskycraper</h6>
+                                    <p>160x600</p>
+                                    <img src="images/banner3.svg" alt="#" className="img-responsive" />
+                                  </div>
+                                  <div className="baaner_type">
+                                    <h6>Mégaskycraper</h6>
+                                    <p>160x600</p>
+                                    <img src="images/banner4.svg" alt="#" className="img-responsive" />
+                                  </div>
+                                </div>
                               </Panel.Body>
                             </Panel>
                           );
                         })
                       }
                     </PanelGroup>
-
-                    {/* <Pack packs={this.campaignDetailsFakeData.packs}></Pack> */}
                   </div>
                 </div>
               </div>
@@ -141,4 +200,4 @@ class DetailPage extends React.Component {
   }
 }
 
-export { DetailPage }; 
+export { DetailPageV2 }; 
