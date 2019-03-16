@@ -2,10 +2,10 @@ import React from 'react';
 import { PanelGroup, Panel } from 'react-bootstrap';
 
 import { campaignDetailsFakeData } from '../../_helpers/fake-data';
-import { detailsImg, icUserImg, icUserExclamationImg, icUserCheckImg } from '../../_helpers/load-images';
+import { detailsImg } from '../../_helpers/load-images';
 import { Pack } from './Pack';
 
-class DetailPage extends React.Component {
+class DetailPageV2 extends React.Component {
   constructor() {
     super();
 
@@ -74,32 +74,10 @@ class DetailPage extends React.Component {
                       <p>J’attire des nouveaux clients grâce à la publicité locale sur Facebook.</p>
                       <span className="time">15 jours ou 30 jours</span>
                     </div>
-                    <div className="attract-list">
-                      <ul>
-                        <li>
-                          <h5>Reach unique</h5>
-                          <div className="attract-btn">
-                            <i><img src={icUserImg} className="img-responsive" alt="#" /></i>
-                            10 000 personnes
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Nombre de contact</h5>
-                          <div className="attract-btn">
-                            <i><img src={icUserExclamationImg} className="img-responsive" alt="#" /></i>
-                            5 000
-                          </div>
-                        </li>
-                        <li>
-                          <h5>Nombre de clics générés</h5>
-                          <div className="attract-btn">
-                            <i><img src={icUserCheckImg} className="img-responsive" alt="#" /></i>
-                            1000
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
                   </div>
+
+                  <Pack packs={this.campaignDetailsFakeData.packs}></Pack>
+
                   <div className="derails-raw">
                     <h4>Détails de l’offre</h4>
                     <PanelGroup accordion id="accordion" activeKey={this.state.activePanelKey} onSelect={this.handlePanelSelect}>
@@ -114,11 +92,23 @@ class DetailPage extends React.Component {
                               </Panel.Heading>
                               <Panel.Body collapsible>
                                 {
-                                  offer.info.map((info, iKey) => {
+                                  offer.info && offer.info.map((info, iKey) => {
                                     return (
                                       <p key={iKey}>
                                         {info}
                                       </p>
+                                    );
+                                  })
+                                }
+
+                                {
+                                  offer.banner && offer.banner.map((banner, bKey) => {
+                                    return (
+                                      <div className="baaner_type" key={bKey}>
+                                        <h6>{banner.label}</h6>
+                                        <p>{banner.size}</p>
+                                        <img src={banner.img} alt="#" className="img-responsive" />
+                                      </div>
                                     );
                                   })
                                 }
@@ -128,8 +118,6 @@ class DetailPage extends React.Component {
                         })
                       }
                     </PanelGroup>
-
-                    {/* <Pack packs={this.campaignDetailsFakeData.packs}></Pack> */}
                   </div>
                 </div>
               </div>
@@ -141,4 +129,4 @@ class DetailPage extends React.Component {
   }
 }
 
-export { DetailPage }; 
+export { DetailPageV2 }; 

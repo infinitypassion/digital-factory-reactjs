@@ -20,7 +20,11 @@ import {
   snapImg,
   icSnapImg,
   wazeImg,
-  icWazeImg
+  icWazeImg,
+  banner1Img,
+  banner2Img,
+  banner3Img,
+  banner4Img
 } from './load-images';
 
 export let referencesFakeData = {
@@ -112,7 +116,32 @@ export let campaignDetailsFakeData = {
       id: 1,
       key: 'collapse1',
       title: 'Pourquoi cette offre ?',
-      info: ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']
+      info: ['Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'],
+      banner: [{
+          id: 1,
+          label: 'Pavé',
+          size: '300x250',
+          img: banner1Img
+        },
+        {
+          id: 2,
+          label: 'Skyscraper',
+          size: '120x600',
+          img: banner2Img
+        },
+        {
+          id: 3,
+          label: 'Mégaskycraper',
+          size: '160x600',
+          img: banner3Img
+        },
+        {
+          id: 4,
+          label: 'Mégaskycraper',
+          size: '160x600',
+          img: banner4Img
+        }
+      ]
     },
     {
       id: 2,

@@ -29,6 +29,10 @@ import detailsImg from '../_assets/images/details-img.jpg';
 import icUserImg from '../_assets/images/ic-user.svg';
 import icUserExclamationImg from '../_assets/images/ic-user-exclamation.svg';
 import icUserCheckImg from '../_assets/images/ic-user-check.svg';
+import banner1Img from '../_assets/images/banner1.svg';
+import banner2Img from '../_assets/images/banner2.svg';
+import banner3Img from '../_assets/images/banner3.svg';
+import banner4Img from '../_assets/images/banner4.svg';
 
 export {
   logoImg,
@@ -61,5 +65,9 @@ export {
   detailsImg,
   icUserImg,
   icUserExclamationImg,
-  icUserCheckImg
+  icUserCheckImg,
+  banner1Img,
+  banner2Img,
+  banner3Img,
+  banner4Img
 };

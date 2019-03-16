@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
 import { campaignsFakeData } from '../../_helpers/fake-data';
 import { reseauxBannerImg, independantBannerImg } from '../../_helpers/load-images';
@@ -10,6 +9,23 @@ export class OfferPage extends React.Component {
     super(props);
     this.state = { campaginState: 'home' };
   }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  handleClickOutside = (event) => {
+    if (!this.refs.needs.contains(event.target)) {
+      if (this.refs.needsOptions.style.display || this.refs.needsOptions.style.display == 'block') {
+        this.refs.needsOptions.style = 'display: hide;';
+      }
+    }
+  }
+
 
   toggleCampaignTab = (e) => {
     e.stopPropagation();
@@ -26,15 +42,22 @@ export class OfferPage extends React.Component {
 
   getSelectedValue = () => {
     let val = this.refs.needs.innerText;
+    console.log('getSelectedValue val==>', val);
   }
 
   toggleNeedsDropdown = (e) => {
     if (this.refs.needsOptions.style.display && this.refs.needsOptions.style.display == 'block') {
-      this.refs.needsOptions.style = 'display: hide;'
+      this.refs.needsOptions.style = 'display: hide;';
     } else {
-      this.refs.needsOptions.style = 'display: block;'
+      this.refs.needsOptions.style = 'display: block;';
     }
     e.preventDefault();
+  }
+
+  needOnChange = (e) => {
+    console.log('needOnChange==>', e.target.value);
+    this.refs.needsValue.innerText = e.target.value;
+    this.refs.needsOptions.style = 'display: hide;'
   }
 
   // Render
@@ -60,43 +83,35 @@ export class OfferPage extends React.Component {
                     <div className="need-selector">
                       <dl id="needs" ref="needs" className="dropdown">
                         <dt>
-                          <Link to="#" onClick={this.toggleNeedsDropdown}>
+                          <label onClick={this.toggleNeedsDropdown}>
                             <i>
                               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="14.667px" viewBox="0.002 0.972 21 14.667" enableBackground="new 0.002 0.972 21 14.667" xmlSpace="preserve">
                                 <path fill="#273138" d="M8.169,15.639h4.667v-2.445H8.169V15.639z M0.002,0.972v2.444h21V0.972H0.002z M3.502,9.527h14V7.083h-14
                                         V9.527z" />
                               </svg>
                             </i>
-                            <span>De quoi avez-vous besoin ?...</span>
-                          </Link>
+                            <span id="needsValue" ref="needsValue">De quoi avez-vous besoin ?...</span>
+                          </label>
                         </dt>
                         <dd>
                           <ul ref="needsOptions">
                             <li>
-                              <Link to="#">
-                                <label>Je développe ma notoriété et j’attire de nouveaux clients
-                                <input type="radio" name="radio" />
-                                  <span className="checkmark" />
-                                </label>
-                              </Link>
+                              <label>Je développe ma notoriété et j’attire de nouveaux clients
+                                <input type="radio" name="radio" name="needOption" value="Je développe ma notoriété et j’attire de nouveaux clients" onChange={this.needOnChange} />
+                                <span className="checkmark" />
+                              </label>
                             </li>
                             <li>
-                              <Link to="#">
-                                <label>Améliorer ma visibilité et ma réputation sur internet
-                                <input type="radio" name="radio" />
-                                  <span className="checkmark" />
-                                </label>
-                              </Link>
+                              <label>Améliorer ma visibilité et ma réputation sur internet
+                                <input type="radio" name="radio" name="needOption" value="Améliorer ma visibilité et ma réputation sur internet" onChange={this.needOnChange} />
+                                <span className="checkmark" />
+                              </label>
                             </li>
                             <li>
-                              <Link to="#">
-                                <label>Je développe mon business avec de nouveaux services
-                                <input type="radio" name="radio" />
-                                  <span className="checkmark" />
-                                  <label>
-                                  </label>
-                                </label>
-                              </Link>
+                              <label>Je développe mon business avec de nouveaux services
+                                <input type="radio" name="radio" name="needOption" value="Je développe mon business avec de nouveaux services" onChange={this.needOnChange} />
+                                <span className="checkmark" />
+                              </label>
                             </li>
                           </ul>
                         </dd>
@@ -117,7 +132,7 @@ export class OfferPage extends React.Component {
                             </div>
                             <div className="value-filter">
                               <select className="form-control">
-                                <option disabled>Trier...</option>
+                                <option disabled>Trier par budget</option>
                                 <option value={0}>Les plus valorisés</option>
                                 <option value={1}>Les moins valorisés</option>
                               </select>
@@ -126,11 +141,9 @@ export class OfferPage extends React.Component {
                           <div className="campaigns-list">
                             <ul>
                               {
-                                campaignsFakeData.campaigns.map(
-                                  (campaign, cKey) => (
-                                    <Campaign key={cKey} campaign={campaign} />
-                                  )
-                                )
+                                campaignsFakeData.campaigns.map((campaign, cKey) => (
+                                  <Campaign key={cKey} campaign={campaign} />
+                                ))
                               }
                             </ul>
                           </div>
@@ -158,8 +171,7 @@ export class OfferPage extends React.Component {
                               {
                                 campaignsFakeData.campaigns.map((campaign, cKey) => (
                                   <Campaign key={cKey} campaign={campaign} />
-                                )
-                                )
+                                ))
                               }
                             </ul>
                           </div>
