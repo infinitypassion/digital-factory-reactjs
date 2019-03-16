@@ -26,15 +26,22 @@ export class OfferPage extends React.Component {
 
   getSelectedValue = () => {
     let val = this.refs.needs.innerText;
+    console.log('getSelectedValue val==>', val);
   }
 
   toggleNeedsDropdown = (e) => {
     if (this.refs.needsOptions.style.display && this.refs.needsOptions.style.display == 'block') {
-      this.refs.needsOptions.style = 'display: hide;'
+      this.refs.needsOptions.style = 'display: hide;';
     } else {
-      this.refs.needsOptions.style = 'display: block;'
+      this.refs.needsOptions.style = 'display: block;';
     }
     e.preventDefault();
+  }
+
+  needOnChange = (e) => {
+    console.log('needOnChange==>', e.target.value);
+    this.refs.needsValue.innerText = e.target.value;
+    this.refs.needsOptions.style = 'display: hide;'
   }
 
   // Render
@@ -67,26 +74,26 @@ export class OfferPage extends React.Component {
                                         V9.527z" />
                               </svg>
                             </i>
-                            <span>De quoi avez-vous besoin ?...</span>
+                            <span id="needsValue" ref="needsValue">De quoi avez-vous besoin ?...</span>
                           </label>
                         </dt>
                         <dd>
                           <ul ref="needsOptions">
                             <li>
                               <label>Je développe ma notoriété et j’attire de nouveaux clients
-                                <input type="radio" name="radio" />
+                                <input type="radio" name="radio" name="needOption" value="Je développe ma notoriété et j’attire de nouveaux clients" onChange={this.needOnChange} />
                                 <span className="checkmark" />
                               </label>
                             </li>
                             <li>
                               <label>Améliorer ma visibilité et ma réputation sur internet
-                                <input type="radio" name="radio" />
+                                <input type="radio" name="radio" name="needOption" value="Améliorer ma visibilité et ma réputation sur internet" onChange={this.needOnChange} />
                                 <span className="checkmark" />
                               </label>
                             </li>
                             <li>
                               <label>Je développe mon business avec de nouveaux services
-                                <input type="radio" name="radio" />
+                                <input type="radio" name="radio" name="needOption" value="Je développe mon business avec de nouveaux services" onChange={this.needOnChange} />
                                 <span className="checkmark" />
                               </label>
                             </li>
@@ -118,11 +125,9 @@ export class OfferPage extends React.Component {
                           <div className="campaigns-list">
                             <ul>
                               {
-                                campaignsFakeData.campaigns.map(
-                                  (campaign, cKey) => (
+                                campaignsFakeData.campaigns.map((campaign, cKey) => (
                                     <Campaign key={cKey} campaign={campaign} />
-                                  )
-                                )
+                                  ))
                               }
                             </ul>
                           </div>
@@ -150,8 +155,7 @@ export class OfferPage extends React.Component {
                               {
                                 campaignsFakeData.campaigns.map((campaign, cKey) => (
                                   <Campaign key={cKey} campaign={campaign} />
-                                )
-                                )
+                                ))
                               }
                             </ul>
                           </div>
