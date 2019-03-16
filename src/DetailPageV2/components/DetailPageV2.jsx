@@ -2,7 +2,7 @@ import React from 'react';
 import { PanelGroup, Panel } from 'react-bootstrap';
 
 import { campaignDetailsFakeData } from '../../_helpers/fake-data';
-import { detailsImg, icUserImg, icUserExclamationImg, icUserCheckImg } from '../../_helpers/load-images';
+import { detailsImg } from '../../_helpers/load-images';
 import { Pack } from './Pack';
 
 class DetailPageV2 extends React.Component {
@@ -75,58 +75,9 @@ class DetailPageV2 extends React.Component {
                       <span className="time">15 jours ou 30 jours</span>
                     </div>
                   </div>
-                  <div className="pack-main">
-                    <div className="pack-box">
-                      <div className="pack-title">
-                        <h2>Starter</h2>
-                        <span className="time">15j</span>
-                      </div>
-                      <div className="pack-list">
-                        <ul>
-                          <li>
-                            <h5>Reach unique</h5>
-                            <span>10 000</span>
-                          </li>
-                          <li>
-                            <h5>contact</h5>
-                            <span>5000</span>
-                          </li>
-                          <li>
-                            <h5>clics</h5>
-                            <span>200</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="start-btn">
-                        <a href="#" className="btn-main">Lancer</a>
-                      </div>
-                    </div>
-                    <div className="pack-box">
-                      <div className="pack-title">
-                        <h2>Booster</h2>
-                        <span className="time">30j</span>
-                      </div>
-                      <div className="pack-list">
-                        <ul>
-                          <li>
-                            <h5>Reach unique</h5>
-                            <span>10 000</span>
-                          </li>
-                          <li>
-                            <h5>contact</h5>
-                            <span>5000</span>
-                          </li>
-                          <li>
-                            <h5>clics</h5>
-                            <span>200</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="start-btn">
-                        <a href="#" className="btn-main">Lancer</a>
-                      </div>
-                    </div>
-                  </div>
+
+                  <Pack packs={this.campaignDetailsFakeData.packs}></Pack>
+
                   <div className="derails-raw">
                     <h4>Détails de l’offre</h4>
                     <PanelGroup accordion id="accordion" activeKey={this.state.activePanelKey} onSelect={this.handlePanelSelect}>
@@ -141,7 +92,7 @@ class DetailPageV2 extends React.Component {
                               </Panel.Heading>
                               <Panel.Body collapsible>
                                 {
-                                  offer.info.map((info, iKey) => {
+                                  offer.info && offer.info.map((info, iKey) => {
                                     return (
                                       <p key={iKey}>
                                         {info}
@@ -161,28 +112,6 @@ class DetailPageV2 extends React.Component {
                                     );
                                   })
                                 }
-                                <div className="banner_con">
-                                  <div className="baaner_type">
-                                    <h6>Pavé</h6>
-                                    <p>300x250</p>
-                                    <img src="images/banner1.svg" alt="#" className="img-responsive" />
-                                  </div>
-                                  <div className="baaner_type">
-                                    <h6>Skyscraper</h6>
-                                    <p>120x600</p>
-                                    <img src="images/banner2.svg" alt="#" className="img-responsive" />
-                                  </div>
-                                  <div className="baaner_type">
-                                    <h6>Mégaskycraper</h6>
-                                    <p>160x600</p>
-                                    <img src="images/banner3.svg" alt="#" className="img-responsive" />
-                                  </div>
-                                  <div className="baaner_type">
-                                    <h6>Mégaskycraper</h6>
-                                    <p>160x600</p>
-                                    <img src="images/banner4.svg" alt="#" className="img-responsive" />
-                                  </div>
-                                </div>
                               </Panel.Body>
                             </Panel>
                           );

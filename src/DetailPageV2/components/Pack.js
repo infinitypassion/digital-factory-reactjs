@@ -1,43 +1,29 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { icUserImg, icUserExclamationImg, icUserCheckImg } from '../../_helpers/load-images';
 
 export const Pack = (props) => (
-  <div className="derails-raw">
-    <h4>Choisir un pack</h4>
+  <div className="pack-main">
     {
-      props.packs.map((pack, pKey) => {
+      props.packs && props.packs.map((pack, pKey) => {
         return (
           <div className="pack-box" key={pKey}>
-            <div className="pack-head">
-              <div className="detials-title">
-                <h2>{pack.title}</h2>
-                <p>{pack.info}</p>
-                <span className="time">{pack.duration} jours</span>
-              </div>
+            <div className="pack-title">
+              <h2>{pack.title}</h2>
+              <span className="time">{pack.duration}j</span>
             </div>
-            <div className="attract-list">
+            <div className="pack-list">
               <ul>
                 <li>
                   <h5>Reach unique</h5>
-                  <div className="attract-btn">
-                    <i><img src={icUserImg} className="img-responsive" alt="#" /></i>
-                    {pack.singleReach} personnes
-                  </div>
+                  <span>{pack.singleReach}</span>
                 </li>
                 <li>
-                  <h5>Nombre de contact</h5>
-                  <div className="attract-btn">
-                    <i><img src={icUserExclamationImg} className="img-responsive" alt="#" /></i>
-                    {pack.totContacts}
-                  </div>
+                  <h5>contact</h5>
+                  <span>{pack.totContacts}</span>
                 </li>
                 <li>
-                  <h5>Nombre de clics générés</h5>
-                  <div className="attract-btn">
-                    <i><img src={icUserCheckImg} className="img-responsive" alt="#" /></i>
-                    {pack.totClicks}
-                  </div>
+                  <h5>clics</h5>
+                  <span>{pack.totClicks}</span>
                 </li>
               </ul>
             </div>
