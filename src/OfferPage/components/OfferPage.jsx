@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { TabContainer, Nav, NavItem, TabContent, TabPane } from 'react-bootstrap';
 import { campaignsFakeData } from '../../_helpers/fake-data';
 import { reseauxBannerImg, independantBannerImg } from '../../_helpers/load-images';
@@ -10,6 +9,23 @@ export class OfferPage extends React.Component {
     super(props);
     this.state = { campaginState: 'home' };
   }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  handleClickOutside = (event) => {
+    if (!this.refs.needs.contains(event.target)) {
+      if (this.refs.needsOptions.style.display || this.refs.needsOptions.style.display == 'block') {
+        this.refs.needsOptions.style = 'display: hide;';
+      }
+    }
+  }
+
 
   toggleCampaignTab = (e) => {
     e.stopPropagation();
@@ -126,8 +142,8 @@ export class OfferPage extends React.Component {
                             <ul>
                               {
                                 campaignsFakeData.campaigns.map((campaign, cKey) => (
-                                    <Campaign key={cKey} campaign={campaign} />
-                                  ))
+                                  <Campaign key={cKey} campaign={campaign} />
+                                ))
                               }
                             </ul>
                           </div>
