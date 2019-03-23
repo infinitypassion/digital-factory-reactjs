@@ -7,7 +7,7 @@ import { Campaign } from "./Campaign";
 export class OfferPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { campaginState: 'home' };
+    this.state = { campaginState: 'home', needsClassName: 'dropdown' };
   }
 
   componentDidMount() {
@@ -36,7 +36,7 @@ export class OfferPage extends React.Component {
   }
 
   handleTabContSelect = (campaginState) => {
-    this.setState({ campaginState });
+    this.setState({ campaginState: campaginState });
   }
 
   getSelectedValue = () => {
@@ -55,8 +55,11 @@ export class OfferPage extends React.Component {
 
   needOnChange = (e) => {
     console.log('needOnChange==>', e.target.value);
+    
     this.refs.needsValue.innerText = e.target.value;
-    this.refs.needsOptions.style = 'display: hide;'
+    this.refs.needsOptions.style = 'display: hide;';
+    
+    this.setState({ needsClassName: 'dropdown active' });
   }
 
   // Render
@@ -80,7 +83,7 @@ export class OfferPage extends React.Component {
                       </label>
                     </div>
                     <div className="need-selector">
-                      <dl id="needs" ref="needs" className="dropdown">
+                      <dl id="needs" ref="needs" className={this.state.needsClassName}>
                         <dt>
                           <label onClick={this.toggleNeedsDropdown}>
                             <i>
