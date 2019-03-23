@@ -228,9 +228,9 @@ a:hover {
 	width: 100%;
 	height: 50px;
 	padding: 0 15px;
-	color: #93A1AD;
+	color: #273138;
 	font-size: 16px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 120%;
 	border: 1px solid transparent;
 	box-shadow: none;
@@ -368,6 +368,62 @@ section {
 }
 /* ------ Login-end ------ */
 
+/*-----------------res-nav-Start-------------------*/
+.res-navigation{
+	display:none;
+	width:30px;
+	height:15px;
+	position:absolute;
+	left:15px;
+	top:-35px;
+}
+.nav-toggle {
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 999999;
+    padding:5px 30px 13px 0;
+    cursor: pointer;
+}
+.nav-toggle:focus {
+    outline: none;
+}
+.nav-toggle.active .top {
+  -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+  -ms-transform: translateY(7px) translateX(0) rotate(45deg);
+  transform: translateY(7px) translateX(0) rotate(45deg);
+  background:#333;
+}
+.nav-toggle.active .middle {
+  opacity: 0;
+  background: #FFF;
+}
+.nav-toggle.active .bottom {
+   -webkit-transform: translateY(-7px) translateX(0) rotate(-45deg);
+   -ms-transform: translateY(-7px) translateX(0) rotate(-45deg);
+   transform: translateY(-7px) translateX(0) rotate(-45deg);
+   background:#333;
+}
+.nav-toggle span {
+  background:#333;
+  border: none;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top:-2px;
+  left: 0;
+  -webkit-transition: all .55s ease;
+  transition: all .35s ease;
+  cursor: pointer;
+}
+.nav-toggle span:nth-of-type(2) {
+  top:5px;
+}
+.nav-toggle span:nth-of-type(3) {
+  top:12px;
+}
+/*-----------------res-nav-end-------------------*/
+
 /*-------------------Index Page Start-------*/
 #header {
 	background: #fff;
@@ -386,36 +442,25 @@ section {
 	width: 100%;
 	position: relative;
 }
-.navbar-brand{
+.header-main .branding{
 	width: 104px;
 	padding: 12px 0;
-	height: auto;
 }
-
-
-.navbar{
-	border-bottom: 1px solid #dbdbdb;
-	background: #ffffff;
-	margin: 0;
-	z-index: 999;
-}
-.navbar-header{
-	float: left;
-	width: 100%;
-	position: relative;
-}
-.navbar-nav{
+.header-right{
 	float: right;
 	width: auto;
 	position: absolute;
-	right: 0;
+	right: 1%;
 	top: 0;
-	padding-right: 95px;
+	padding-right: 82px;
 }
-.navbar-nav li{
+.nav-main li{
+	float: left;
+	width: auto;
 	margin-right: 25px;
+	position: relative;
 }
-.navbar-nav li a{
+.nav-main li a{
 	float: left;
 	width: auto;
 	padding: 0 20px 0 40px; 
@@ -431,12 +476,12 @@ section {
     -webkit-text-shadow: none;
     -moz-text-shadow: none;
 }
-.navbar-nav li a:hover, .navbar-nav li a:focus, .navbar-nav li.active a,
+.nav-main li a:hover, .nav-main li a:focus, .nav-main li.active a,
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
 	color: #F40000;
 	background: transparent;
 }
-.navbar-nav li i{
+.nav-main li i{
 	background: #ffffff;
 	float: left;
 	width: 30px;
@@ -454,7 +499,7 @@ section {
 	-webkit-transition: all 0.25s ease 0s;
     -moz-transition: all 0.25s ease 0s;
 }
-.navbar-nav li i svg{
+.nav-main li i svg{
 	fill: #6E6E6E;
 	stroke: #6E6E6E;
 	display: inline-block;
@@ -463,42 +508,54 @@ section {
     -moz-transition: all 0.25s ease 0s;
     vertical-align: middle;
 }
-.navbar-nav li a:hover i svg, .navbar-nav li.active a i svg{
+.nav-main li a:hover i svg, .nav-main li.active a i svg{
 	fill: #ffffff;
 	stroke: #ffffff;
 }
-.navbar-nav li a:hover i, .navbar-nav li.active a i{
+.nav-main li a:hover i, .nav-main li.active a i{
 	background: #F40000;
 }
-
-.navbar-nav > li > .dropdown-menu{
+.nav-main .sub-nav{
+	float: left;
+	background: #fff;
 	width: 100%;
 	border: 1px solid #DBDBDB;
 	padding: 0;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+	position: absolute;
+	top: 100px;
+	transition: all 0.25s ease 0s;
+	-webkit-transition: all 0.25s ease 0s;
+	-moz-transition: all 0.25s ease 0s;
+	opacity: 0;
+	visibility: hidden;
 }
-.navbar-nav .dropdown-menu ul{
-	padding: 10px 25px;
+.nav-main ul li.has-sub:hover .sub-nav{
+	top: 80px;
+	opacity: 1;
+	visibility: visible;
 }
-.dropdown-menu ul li{
+.nav-main .sub-nav ul{
+	padding: 0 25px 15px;
+}
+.nav-main .sub-nav ul li{
 	float: left;
 	width: 100%;
 	margin: 10px 0 0;
 }
-.dropdown-menu ul li a{
+.nav-main .sub-nav ul li a{
 	line-height: 40px;
 	padding-right: 0;
 }
-.dropdown-menu li i{
+.nav-main .sub-nav ul li i{
 	top: 8px;
 }
-.dropdown.open .caret{
+.nav-main ul li.has-sub:hover .caret{
 	transform: rotate(180deg);
 }
-
-
 .profile{
 	position: absolute;
-	right: 1%;
+	right: 0;
 	top: 0;
 }
 .profile button{
@@ -545,7 +602,7 @@ section {
 .profile.open .prfile-box {
 	transform: scale(1)
 }
-.navbar  .prfile-box ul li{
+.header-main  .prfile-box ul li{
 	margin-top: 20px;
 	line-height: 120%;
 }
@@ -760,6 +817,7 @@ option:before{
 	float: left;
 	width: 32.3%;
 	margin:15px 1.5% 0 0;
+	position: relative;
 }
 .campaigns-list ul li:nth-child(3n){
 	margin-right: 0;
@@ -818,7 +876,11 @@ option:before{
 	line-height: 40px;
 	text-transform: capitalize;
 }  
-
+.campaigns-list .range{
+	position: absolute;
+	right: 25px;
+	bottom: 32px;
+}
 .campaigns-box:hover{
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -1036,6 +1098,7 @@ option:before{
 	float: left;
 	line-height: inherit;
 	padding-top: 5px;
+	margin: 0;
 }
 .details-rating .range.start label::before{
 	content: "\f006"
@@ -1184,6 +1247,7 @@ option:before{
 	width: 100%;
 	padding: 25px;
 	margin-top: 10px;
+	position: relative;
 }
 .pack-title{
 	float: left;
@@ -1427,6 +1491,153 @@ option:before{
 	right: 135px;
 	top: 45px;
 }
+
+
+
+
+.passport-main{
+	position: relative;
+}
+.passport-banner{
+	float: left;
+	width: 48%;
+	height: 100vh;
+	background-size: cover !important;
+	background-position: right center !important;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.passport-banner:before{
+	background: #273138;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
+	opacity: 0.6;
+}
+.passport-con{
+	float: left;
+	width: 70%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9;
+}
+.passport-social{
+	float: left;
+	width: 100%;
+}
+.passport-social ul li{
+	float: left;
+	width: auto;
+	margin-right: 10px;	
+	text-align: center;
+}
+.passport-social ul li a{
+	background: #fff;
+	float: left;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+.passport-social ul li a img{
+	display: inline-block
+}
+.passport-con h1{
+	color: #fff;
+}
+
+
+
+
+.filed-main{
+	float: right;
+	width: 50%;
+	padding: 10px 0 0 10px;
+}
+.field-box{
+	background: #fff;
+	float: left;
+	width: 100%;
+	padding: 35px 85px;
+	margin-top: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	position: relative;
+}
+.field-raw{
+	float: left;
+	width: 100%;
+	padding-top: 12px;
+}
+.field-raw:first-child{
+	padding: 0;
+}
+.field-raw label{
+	float: left;
+	width: 100%;
+	font-size: 16px;
+	color: #6e6e6e;
+	font-weight: 600;
+	line-height: 120%;
+}
+.field-raw .form-control{
+	margin-top: 10px;
+}
+.pssport-no .form-control{
+	padding: 0;
+	width: 6.7%;
+	margin-right: 2px;
+	text-align: center;
+}
+.pssport-no .form-control:last-child{
+	margin-right: 0;
+}
+
+.shiled-box{
+	float: left;
+	width: 100%;
+	background: rgba(39, 174, 96, 0.15);
+	border: 1px solid #27AE60;
+	padding: 25px 30px;
+	margin-top: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	position: relative;
+}
+.shiled-con{
+	float: left;
+	width: 100%;
+	padding-left: 40px;	
+}
+.shiled-con p{
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 140%;	
+	color: #4F4F4F;
+}
+
+.shiled-con label{
+	float: left;
+	margin-top: 6px;
+	font-size: 16px;
+	color: #27AE60;
+	font-weight: 600;
+	line-height: 120%;
+}
+
+
+
+
 	/*box-shadow:2px 0px 0px #000000;
 	-webkit-box-shadow:2px 0px 0px #000000;
     -moz-box-shadow:2px 0px 0px #000000;

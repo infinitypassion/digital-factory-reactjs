@@ -26,7 +26,6 @@ export class OfferPage extends React.Component {
     }
   }
 
-
   toggleCampaignTab = (e) => {
     e.stopPropagation();
     if (this.state.campaginState == 'home') {
