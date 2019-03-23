@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
 import { logoImg, userAvtarImg } from '../_helpers';
 
 class HeaderComponent extends React.Component {
@@ -8,14 +7,66 @@ class HeaderComponent extends React.Component {
     super();
   }
 
+  componentDidMount() {
+    let path = window.location.href;
+    path = path.substring(path.indexOf('#'));
+
+    this.menuActive(path);
+  }
+
+  menuClickHandle = (e) => {
+    this.menuActive(e.target.hash)
+
+    let triggerOverlayEl = document.getElementById("trigger-overlay");
+    triggerOverlayEl.classList.remove("active");
+
+    let navMainEl = document.getElementById("nav-main");
+    navMainEl.classList.remove("active");
+  }
+
+  menuActive = (hashStr) => {
+    let element = document.getElementById("nav-main-ul");
+    if (hashStr && element && element.childNodes && element.childNodes.length) {
+      for (let i = 0; i < element.childNodes.length; i++) {
+        let menu = document.getElementById(element.childNodes[i].id);
+
+        let menuLinks = menu.getElementsByTagName('a');
+        for(let m = 0; m < menuLinks.length; m++) {
+          if(menuLinks[m].hash == hashStr) {
+            menu.className += ' active';
+          } else {
+            menu.classList.remove('active');
+          }
+        }
+      }
+    }
+  }
+
   myProfile = () => {
-    var element = document.getElementById("profile");
-    element.classList.toggle("open");
+    let profileEl = document.getElementById("profile");
+    profileEl.classList.toggle("open");
   }
 
   myToggle = () => {
-    var element = document.getElementById("nav-main");
-    element.classList.toggle("active");
+    let triggerOverlayEl = document.getElementById("trigger-overlay");
+    triggerOverlayEl.classList.toggle("active");
+
+    let navMainEl = document.getElementById("nav-main");
+    navMainEl.classList.toggle("active");
+
+    let resCampSubMenuEl = document.getElementById("res-camp-sub-menu");
+    resCampSubMenuEl.style = "display: none;";
+  }
+
+  openSubMenu = (e) => {
+    e.preventDefault();
+    let resCampSubMenuEl = document.getElementById("res-camp-sub-menu");
+
+    if (resCampSubMenuEl.style && resCampSubMenuEl.style.display === 'block') {
+      resCampSubMenuEl.style = 'display: none;';
+    } else {
+      resCampSubMenuEl.style = 'display: block;';
+    }
   }
 
   // Render
@@ -38,8 +89,8 @@ class HeaderComponent extends React.Component {
                 </a>
               </div>
               <div className="nav-main" id="nav-main">
-                <ul>
-                  <li>
+                <ul id="nav-main-ul">
+                  <li id="offres-menu" onClick={this.menuClickHandle}>
                     <Link to="/app/offres">
                       <i>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16.131px" height="13.25px" viewBox="0 0 16.131 13.25" enableBackground="new 0 0 16.131 13.25" xmlSpace="preserve">
@@ -63,8 +114,8 @@ class HeaderComponent extends React.Component {
                       Nos offres
                     </Link>
                   </li>
-                  <li className="has-sub">
-                    <Link to="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                  <li id="res-camp-menu" className="has-sub">
+                    <Link to="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" onClick={this.openSubMenu}>
                       <i>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enableBackground="new 0 0 18 18" xmlSpace="preserve">
                           <path fillRule="evenodd" clipRule="evenodd" stroke="none" d="M18,5.337c0,0.271-0.181,0.724-0.452,0.995
@@ -83,10 +134,10 @@ class HeaderComponent extends React.Component {
                       Résultats de mes campagnes
                       <span className="caret" />
                     </Link>
-                    <div className="sub-nav">
+                    <div id="res-camp-sub-menu" className="sub-nav">
                       <ul>
                         <li>
-                          <Link to="/app/details_v2">
+                          <Link to="/app/details_v2" onClick={this.menuClickHandle}>
                             <i>
                               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enableBackground="new 0 0 18 18" xmlSpace="preserve">
                                 <path fillRule="evenodd" clipRule="evenodd" stroke="none" d="M18,5.337c0,0.271-0.181,0.724-0.452,0.995
@@ -106,7 +157,7 @@ class HeaderComponent extends React.Component {
                           </Link>
                         </li>
                         <li>
-                          <Link to="/app/details_v2">
+                          <Link to="/app/details_v2" onClick={this.menuClickHandle}>
                             <i>
                               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enableBackground="new 0 0 18 18" xmlSpace="preserve">
                                 <path fillRule="evenodd" clipRule="evenodd" stroke="none" d="M18,5.337c0,0.271-0.181,0.724-0.452,0.995
@@ -128,7 +179,7 @@ class HeaderComponent extends React.Component {
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <li id="references-menu" onClick={this.menuClickHandle}>
                     <Link to="/app/references">
                       <i>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18.392px" viewBox="0 0 20 18.392" enableBackground="new 0 0 20 18.392" xmlSpace="preserve">
@@ -144,7 +195,7 @@ class HeaderComponent extends React.Component {
                       Références
                     </Link>
                   </li>
-                  <li>
+                  <li id="support-menu" onClick={this.menuClickHandle}>
                     <Link to="/app/support">
                       <i>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewBox="0 0 18 18" enableBackground="new 0 0 18 18" xmlSpace="preserve">
