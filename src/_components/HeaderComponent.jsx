@@ -12,6 +12,12 @@ class HeaderComponent extends React.Component {
     path = path.substring(path.indexOf('#'));
 
     this.menuActive(path);
+
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
   menuClickHandle = (e) => {
@@ -66,6 +72,12 @@ class HeaderComponent extends React.Component {
       resCampSubMenuEl.style = 'display: none;';
     } else {
       resCampSubMenuEl.style = 'display: block;';
+    }
+  }
+
+  handleClickOutside = (event) => {
+    if (!this.refs.profile.contains(event.target)) {
+      this.refs.profile.className = 'profile';
     }
   }
 
@@ -214,7 +226,7 @@ class HeaderComponent extends React.Component {
                   </li>
                 </ul>
               </div>
-              <div className="profile" id="profile">
+              <div className="profile" id="profile" ref="profile">
                 <button onClick={this.myProfile}>
                   <div className="user-avtar">
                     <img src={userAvtarImg} align="digital factory" className="img-responsive" />

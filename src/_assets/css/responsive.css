@@ -44,6 +44,10 @@
 		padding: 0 2%;
 	}
 
+	.campaigns-list .range{
+		right: 15px;
+		bottom: 40px;
+	}
 }
 
 @media only screen and (min-width:992px) and (max-width:1120px) {
@@ -107,14 +111,18 @@
 	}
 	.campaigns-box .text-wrap {
 	    padding: 25px 15px;
+	    min-height: 110px;
 	}
 	.campaigns-box .text-wrap h4{
 		width: 85%;
 		padding-left: 8px;
 		font-size: 16px;
 	}
-	.range{
-		float: left;
+	.campaigns-list .range{
+		bottom: 20px;
+	    left: 62px;
+	    margin: 0;
+	    right: inherit;
 	}
 	.refres-btn{
 		right: 0;
@@ -244,6 +252,7 @@
 	}
 	.campaigns-box .text-wrap {
 	    padding: 20px 12px;
+	    min-height: 90px;
 	}
 	.campaigns-box .text-wrap h4{
 		width: 85%;
@@ -260,7 +269,12 @@
 	    line-height: inherit;
 	    margin: 15px 0 0;
 	}
-
+	.campaigns-list .range{
+		bottom: 20px;
+	    left: 50px;
+	    margin: 0;
+	    right: inherit;
+	}
 	.value-filter .form-control{
 		width: 140px;
 	}
@@ -320,6 +334,10 @@
 		font-size: 14px;
 	}
 
+	.attract-list ul li{
+		width: 48%;
+	}
+
 
 
 }
@@ -372,9 +390,9 @@
 		padding-right: 0;
 		overflow:auto;
 		text-align: left;
-		transition: all 0.25s ease 0s;
-		-webkit-transition: all 0.25s ease 0s;
-		-moz-transition: all 0.25s ease 0s;
+		transition: all 0.5s ease 0s;
+		-webkit-transition: all 0.5s ease 0s;
+		-moz-transition: all 0.5s ease 0s;
 	}
 	.nav-main.active{
 		left: 0;	
@@ -429,6 +447,9 @@
 		visibility: visible;
 		border: none;
 		box-shadow: none;
+		transition: all 0.5s ease 0s;
+		-webkit-transition: all 0.5s ease 0s;
+		-moz-transition: all 0.5s ease 0s;
 	}
 	.nav-main ul li.has-sub:hover .sub-nav{
 		top: 0;
@@ -512,6 +533,11 @@
 	.campaigns-ico{
 		width: 30px;
 		height: 30px;
+	}
+	.campaigns-list .range{
+		bottom: 20px;
+		left: 48px;
+		right: inherit;
 	}
 	.range{
 		float: left;
@@ -671,6 +697,7 @@
 	}
 	.campaigns-box .text-wrap {
 	    padding: 20px 10px;
+	    min-height: 90px;
 	}
 	.campaigns-box .text-wrap h4{
 		width: 84%;
@@ -708,6 +735,11 @@
 		right: 15px;
 	}
 
+	.attract-list ul li{
+		width: 48%;
+		margin: 10px 1% 0;
+	}
+
 
 	
 	
@@ -717,6 +749,9 @@
 @media only screen and (min-width:550px) and (max-width:767px) {
 	.campaigns-box .text-wrap {
 	    padding: 20px 20px;
+	}
+	.campaigns-list .range{
+		left: 58px;
 	}
 	.campaigns-box .text-wrap h4{
 		font-size: 14px;
@@ -832,6 +867,11 @@
 		font-size: 13px;
 		line-height: 30px;
 	}
+	.campaigns-list .range{
+		line-height: inherit;
+		bottom: 30px;
+		right: 15px;
+	}
 	.range{
 		float: right;
 		margin: 0;
@@ -870,6 +910,10 @@
 		top: 10px;
 		right: 15px;
 		width: 90px;
+	}
+	.attract-list ul li{
+		width: 100%;
+		margin: 10px 0 0;
 	}
 
 	

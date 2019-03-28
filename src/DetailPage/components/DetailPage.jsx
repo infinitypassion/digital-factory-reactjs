@@ -1,6 +1,6 @@
-import React from 'react';
+﻿import React from 'react';
 import { PanelGroup, Panel } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 import { campaignDetailsFakeData } from '../../_helpers/fake-data';
 import { detailsImg, icUserImg, icUserExclamationImg, icUserCheckImg } from '../../_helpers/load-images';
 import { Pack } from './Pack';
@@ -98,6 +98,9 @@ class DetailPage extends React.Component {
                           </div>
                         </li>
                       </ul>
+                      <div className="start-btn">
+                        <Link to="#" className="btn-main">Lancer cette campagne</Link>
+                      </div>
                     </div>
                   </div>
                   <div className="derails-raw">

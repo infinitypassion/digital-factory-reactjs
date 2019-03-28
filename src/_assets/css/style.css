@@ -879,7 +879,9 @@ option:before{
 .campaigns-list .range{
 	position: absolute;
 	right: 25px;
-	bottom: 32px;
+	bottom: 44px;
+	margin: 0;
+	line-height: inherit;
 }
 .campaigns-box:hover{
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -1152,6 +1154,18 @@ option:before{
 .attract-list h5{
 	color: #9FA5AC;
 }
+.attract-list .start-btn{
+	position: relative;
+	width: 100%;
+	right: inherit;
+}
+.attract-list .start-btn .btn-main{
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	height: 48px;
+	line-height: 48px;
+}
 .attract-btn{
 	background: rgba(19, 126, 193, 0.1);
 	float: left;
@@ -1353,7 +1367,7 @@ option:before{
 
 /* DT styles for sliding doors */
 .dropdown dt label {
-	background:#fff url(../images/need-arrow.svg) no-repeat right 20px center; 
+	background:#fff; 
 	display: block; 
 	padding:0 40px 0 65px;  
 	width: 100%;
@@ -1363,12 +1377,24 @@ option:before{
 	border-radius: 4px;
 	overflow: hidden;
 }
+.dropdown dt label:before{
+	background:#fff url(../images/need-arrow.svg) no-repeat center; 
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	width: 30px;
+	height: 30px;
+	content: "";
+}
 .dropdown dt i{
 	position: absolute;
 	left: 25px;
 	top: 3px;
 	width: 22px;
 	height: 15px;
+}
+.dropdown dt i svg{
+	fill: #273138;
 }
 .dropdown dt i:after{
 	width: 12px;
@@ -1380,14 +1406,15 @@ option:before{
 	content: "";
 	border-radius: 100px;
 	border: 2px solid #fff;
+	opacity: 0;
 }
-.dropdown dt  span .checkmark{
+.dropdown dt span .checkmark{
 	display: none;
 }
-.dropdown dt  span label{
+.dropdown dt span label{
 	font-weight: 500;
 } 
-.dropdown dt  span {
+.dropdown dt span {
 	cursor:pointer; 
 	display:block; 
 	padding:0;
@@ -1396,6 +1423,20 @@ option:before{
 	color: #273138;
 	text-decoration: none;
 }
+.dropdown dt:hover i svg, .dropdown dt:focus i svg,
+.dropdown.active i svg{
+	fill: #137EC1;
+}
+.dropdown dt span:hover, .dropdown dt span:focus,
+.dropdown.active dt span{
+	color: #137EC1;
+}
+.dropdown.active dt i:after{
+	opacity: 1
+}
+/*.dropdown.active dt label:before{
+	background:#fff url(../images/need-arrow-active.svg) no-repeat center;
+}*/
 /* UL styles */
 .dropdown dd ul { 
 	background:#fff;
@@ -1668,6 +1709,7 @@ option:before{
 
 	
 	*/
+
 
 
 
